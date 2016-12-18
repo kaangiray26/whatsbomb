@@ -8,14 +8,18 @@ import time
 driver = webdriver.Chrome()
 
 driver.get("https://web.whatsapp.com/")
-raw_input("Press enter if you logged in:")
-img = driver.find_element_by_class_name("intro-title")
-try:
-    assert img.text in driver.page_source
-except AssertionError:
-    print "Log in failure"
-    time.sleep(3)
-    driver.close()
+time.sleep(2)
+while True:
+  try:
+    img = driver.find_element_by_class_name("cont-input-search")
+  except NoSuchElementException:
+    pass
+  try:
+    if img.is_displayed():
+      break
+  except NameError:
+    pass
+time.sleep(2)
 isim=driver.find_element_by_css_selector(".input.input-search")
 isim.send_keys(raw_input("Name:"))
 time.sleep(5)
