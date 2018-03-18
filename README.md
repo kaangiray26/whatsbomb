@@ -3,7 +3,7 @@ Whatsapp Message Flood
 
 -Packages to be installed:-
 
-**sudo pip install selenium**
+**selenium via pip**
 
-**Chromedriver from: http://chromedriver.storage.googleapis.com/index.html?path=2.25/**
+**Chromedriver from: https://sites.google.com/a/chromium.org/chromedriver/downloads**
 
