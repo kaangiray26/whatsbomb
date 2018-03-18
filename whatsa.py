@@ -11,7 +11,7 @@ driver.get("https://web.whatsapp.com/")
 time.sleep(2)
 while True:
   try:
-    img = driver.find_element_by_class_name("cont-input-search")
+    img = driver.find_element_by_id("input-chatlist-search")
   except NoSuchElementException:
     pass
   try:
@@ -20,16 +20,20 @@ while True:
   except NameError:
     pass
 time.sleep(2)
-isim=driver.find_element_by_css_selector(".input.input-search")
-isim.send_keys(raw_input("Name:"))
+search=driver.find_element_by_id("input-chatlist-search")
+name=raw_input("Name:")
+search.send_keys(name)
 time.sleep(5)
-driver.find_element_by_css_selector(".emojitext.ellipsify").click()
+for i in driver.find_element_by_class_name("RLfQR").find_elements_by_class_name("matched-text"):
+    if name in i.text:
+        i.click()
+        break
 time.sleep(2)
 def send(text):
-    mesaj=driver.find_element_by_class_name("input-container").send_keys(text)
-    driver.find_element_by_css_selector(".icon.btn-icon.icon-send.send-container").click()
-global text
-text=raw_input("Message:")
-numid=input("How many times:")
+    driver.find_element_by_id("main").find_element_by_css_selector("._2S1VP.copyable-text.selectable-text").click()
+    mesaj=driver.find_element_by_id("main").find_element_by_css_selector("._2S1VP.copyable-text.selectable-text").send_keys(text,Keys.ENTER)
+msg=raw_input("Message:")
+numid=input("Repeat for:")
 for i in range(int(numid)):
-    send(text)
+    send(msg)
+print "Done"
