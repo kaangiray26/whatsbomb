@@ -1,9 +1,9 @@
 # whatsbomb
-Whatsapp Message Flood
+##Whatsapp Message Flood
 
--Packages to be installed:-
+**Packages to be installed:**
 
-**selenium via pip**
+- selenium via pip**
 
-**Chromedriver from: https://sites.google.com/a/chromium.org/chromedriver/downloads**
+- Chromedriver from: https://sites.google.com/a/chromium.org/chromedriver/downloads
 
